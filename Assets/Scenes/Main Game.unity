@@ -129,11 +129,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 428882978060060014, guid: cfa090958f1f3244c9f83bc574f62cbb, type: 3}
       propertyPath: Xtiles
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 428882978060060014, guid: cfa090958f1f3244c9f83bc574f62cbb, type: 3}
       propertyPath: Ytiles
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 428882978060060014, guid: cfa090958f1f3244c9f83bc574f62cbb, type: 3}
+      propertyPath: Ztiles
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6789976341853156371, guid: cfa090958f1f3244c9f83bc574f62cbb, type: 3}
       propertyPath: m_LocalPosition.x

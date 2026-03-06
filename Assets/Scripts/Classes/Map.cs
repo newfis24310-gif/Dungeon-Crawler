@@ -6,13 +6,13 @@ public class Map : MonoBehaviour
     public List<GameObject> tilePrefabs;
     [SerializeField] GameObject exittilePrefab;
     [SerializeField] int Xtiles =1;
-    [SerializeField] int Ytiles =1;
+    [SerializeField] int Ztiles =1;
     private Transform gridParent;
 
     void Start()
     {
         gridParent = transform;
-        CreateGrid(Xtiles,Ytiles);
+        CreateGrid(Xtiles,Ztiles);
     }
     public void CreateGrid(int x,int z)
     {
