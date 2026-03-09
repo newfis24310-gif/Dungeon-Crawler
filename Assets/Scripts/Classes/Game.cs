@@ -1,11 +1,23 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class Game : MonoBehaviour
 {
     public int state = 1;
     [SerializeField] int maxstates = 2;
     public static bool isPaused = false;
+
+    [SerializeField] List<Detector> detectors = new List<Detector>();
+    [SerializeField] GameObject dirmen;
+
+    void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "Main Game")
+        {
+            ExecuteState(state);
+        }
+    }
 
     void Update()
     {
@@ -47,17 +59,27 @@ public class Game : MonoBehaviour
         {
             state = 1;
         }
+        ExecuteState(state);
     }
 
-   /* public void ExecuteState()
+    public void ExecuteState(int st)
     {
-        if(state == 1)
+        if(st == 1)
         {
-            RevealDirectionUI();
+            dirmen.SetActive(true);
+            foreach (Detector detector in detectors)
+            {
+                detector.moveselection = true;
+            }
         }
-        if(state == 2)
+        else if (st == 2)
         {
-            OnPlayerEnter();
+            dirmen.SetActive(false);
+            foreach (Detector detector in detectors)
+            {
+                detector.moveselection = false;
+            }
+            Debug.Log("State 2");
         }
-    }*/
+    }
 }
