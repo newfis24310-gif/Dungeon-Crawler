@@ -1,15 +1,25 @@
 using UnityEngine;
 
-public class ProtectionShield : Item
-{   private Player player;
-    void Start()
+public class ProtectionShield : Item, ICollectible, IUsable
+{
+    public void Collect(Player player)
     {
-        GameObject targetObject = GameObject.FindGameObjectWithTag("Player");
-        player= targetObject.GetComponent<Player>();
+        player.inventory.AddItem(this);
     }
-    override public void ExecuteEffect()
+
+    public void Use(Player player)
+    {
+        ExecuteEffect(player);
+    }
+
+    override public void ExecuteEffect(Player player)
     {
         player.trapshield=true;
         Debug.Log("You got shield!");
+    }
+
+    public void Collect(Player player)
+    {
+        
     }
 }

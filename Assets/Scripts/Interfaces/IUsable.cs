@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IUsable : MonoBehaviour
+public interface IUsable
 {
-
+    public void Use(Player player);
 }

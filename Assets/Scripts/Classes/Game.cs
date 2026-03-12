@@ -1,21 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections.Generic;
 
 public class Game : MonoBehaviour
 {
-    public int state = 1;
-    [SerializeField] int maxstates = 2;
-    public static bool isPaused = false;
+    public TurnManager turnmanager;
 
-    [SerializeField] List<Detector> detectors = new List<Detector>();
-    [SerializeField] GameObject dirmen;
+    public static bool isPaused = false;
 
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "Main Game")
         {
-            ExecuteState(state);
+            turnmanager.ExecuteState(1);
         }
     }
 
@@ -49,37 +45,6 @@ public class Game : MonoBehaviour
         else if(Time.timeScale == 1)
         {
             Debug.Log("Unpaused");
-        }
-    }
-
-    public void NextState()
-    {
-        state ++;
-        if (state > maxstates)
-        {
-            state = 1;
-        }
-        ExecuteState(state);
-    }
-
-    public void ExecuteState(int st)
-    {
-        if(st == 1)
-        {
-            dirmen.SetActive(true);
-            foreach (Detector detector in detectors)
-            {
-                detector.moveselection = true;
-            }
-        }
-        else if (st == 2)
-        {
-            dirmen.SetActive(false);
-            foreach (Detector detector in detectors)
-            {
-                detector.moveselection = false;
-            }
-            Debug.Log("State 2");
         }
     }
 }

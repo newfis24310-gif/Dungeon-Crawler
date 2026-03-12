@@ -50,5 +50,7 @@ MonoBehaviour:
   - {fileID: 4982524790391069164, guid: a5d30f4916983b14097e2cc3be54c7c1, type: 3}
   - {fileID: 411298296765376853, guid: 205f0542f2114554a9c879f7001f8116, type: 3}
   exittilePrefab: {fileID: 1234775610317130265, guid: 1f7a21ae6dc20bc4b9dbfb9ede2ed836, type: 3}
-  Xtiles: 1
-  Ytiles: 1
+  emptytilePrefab: {fileID: 411298296765376853, guid: 205f0542f2114554a9c879f7001f8116, type: 3}
+  width: 5
+  height: 3
+  tilePrefab: {fileID: 0}

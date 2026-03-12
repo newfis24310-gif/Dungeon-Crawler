@@ -5,26 +5,38 @@ public class Map : MonoBehaviour
 {
     public List<GameObject> tilePrefabs;
     [SerializeField] GameObject exittilePrefab;
-    [SerializeField] int Xtiles =1;
-    [SerializeField] int Ztiles =1;
+    [SerializeField] GameObject emptytilePrefab;
+
+    public int width = 5;
+    public int height = 3;
+    public BaseTile[,] grid;
+
+    public GameObject tilePrefab;
+
     private Transform gridParent;
 
     void Start()
     {
         gridParent = transform;
-        CreateGrid(Xtiles,Ztiles);
+        CreateGrid();
     }
-    public void CreateGrid(int x,int z)
+    public void CreateGrid()
     {
         float tileZ = 0f;
 
-        for(int j = 0; j < z; j ++)
+        for(int j = 0; j < height; j ++)
         {
             float tileX = 0f;
 
-            for(int i = 0; i < x; i ++)
+            for(int i = 0; i < width; i ++)
             {
-                if(i == x-1 && j == z-1)
+                if(i == 0 && j == 0)
+                {
+                    Vector3 spawnPosition = new Vector3(tileX,0,tileZ); 
+                    Instantiate(emptytilePrefab,spawnPosition,Quaternion.identity,gridParent);
+                    tileX += 2.3f;
+                }
+                else if(i == height-1 && j == width-1)
                 {
                     Vector3 spawnPosition = new Vector3(tileX,0,tileZ); 
                     Instantiate(exittilePrefab,spawnPosition,Quaternion.identity,gridParent);
