@@ -17,9 +17,4 @@ public class ProtectionShield : Item, ICollectible, IUsable
         player.trapshield=true;
         Debug.Log("You got shield!");
     }
-
-    public void Collect(Player player)
-    {
-        
-    }
 }

@@ -9,10 +9,7 @@ public class Game : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Main Game")
-        {
-            turnmanager.ExecuteState(1);
-        }
+
     }
 
     void Update()

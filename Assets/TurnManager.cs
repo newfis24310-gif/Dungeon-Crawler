@@ -13,7 +13,7 @@ public class TurnManager : MonoBehaviour
         TileAction
     }
 
-    public void NextState()
+    /*public void NextState()
     {
         state ++;
         if (state > maxstates)
@@ -42,5 +42,5 @@ public class TurnManager : MonoBehaviour
             }
             Debug.Log("State 2");
         }
-    }
+    }*/
 }
