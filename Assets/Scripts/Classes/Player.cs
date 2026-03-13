@@ -6,8 +6,19 @@ public class Player : Entity
     public CombatComponent combat;
     public TurnManager turnmanager;
 
+    [SerializeField] Map map;
+    private Basetile currentTile;
+
+    [Header("Player Stats")]
     public bool trapshield = false;
     public float moveSpeed = 5f; // units per second
+
+
+    void Start()
+    {
+        currentTile = map.grid[0,0];
+        RevealNeighbours();
+    }
 
      public void TakeDamage(int damage) //Καλεί τη μέθοδο με το ίδιο όνομα μέσα στο HealthComponent
     {
@@ -17,7 +28,6 @@ public class Player : Entity
     public void MoveLeft()
     {
         Vector3 targetposition = transform.position;
-
         turnmanager.NextState();
         targetposition += new Vector3(-2.3f,0,0);
         transform.position = targetposition;
@@ -50,6 +60,13 @@ public class Player : Entity
         transform.position = targetposition;
     }
 
+    public void RevealNeighbours()
+    {
+        foreach(var neigh in map.GetNeighbours(currentTile))
+        {
+            neigh.shrouded = false;
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
