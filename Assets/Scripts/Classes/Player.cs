@@ -7,7 +7,7 @@ public class Player : Entity
     public TurnManager turnmanager;
 
     [SerializeField] Map map;
-    private Basetile currentTile;
+    private BaseTile currentTile;
 
     [Header("Player Stats")]
     public bool trapshield = false;

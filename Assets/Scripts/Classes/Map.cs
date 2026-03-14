@@ -11,7 +11,7 @@ public class Map : MonoBehaviour
     public int height = 3;
     public float tileSize = 2.3f;
 
-    private BaseTile[,] grid;
+    public BaseTile[,] grid;
     private Transform gridParent;
 
     public List<GameObject> tilePrefabs;
