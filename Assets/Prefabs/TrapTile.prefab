@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 628865726373334057}
-  - component: {fileID: 2166126520376399761}
   - component: {fileID: 2354995460424172852}
   m_Layer: 0
   m_Name: TrapTile
@@ -36,18 +35,6 @@ Transform:
   - {fileID: 3410848959554138686}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2166126520376399761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6817576625965132610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 816f2a943b3b3ce4ea170e6109c975ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2354995460424172852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80865db3dee233e40aba1d0533d8da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  z: 0
+  shrouded: 1
+  damage: 10
 --- !u!1001 &305998810152184127
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,6 +4,11 @@ using System.Collections.Generic;
 public class TurnManager : MonoBehaviour
 {
     public static TurnManager Instance;
+    public Map map;
+    public Player player;
+    public GameObject LeftOption, RightOption, UpOption, DownOption;
+
+    public bool Right,Left,Up,Down = false;
     public enum GameState
     {
         DirectionSelection,
@@ -14,6 +19,15 @@ public class TurnManager : MonoBehaviour
     }
     public GameState currentState;
 
+    private void Awake()
+    {
+        // Ensure singleton
+        if(Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+    
     void Start()
     {
         currentState = GameState.DirectionSelection;
@@ -32,4 +46,12 @@ public class TurnManager : MonoBehaviour
                 break;
         }
     }
-}
+
+    public void TurnOnDirections(List<BaseTile> neighbours)
+    {
+        if(Left){LeftOption.SetActive(true);}
+        if(Right){RightOption.SetActive(true);}
+        if(Up){UpOption.SetActive(true);}
+        if(Down){DownOption.SetActive(true);}
+    }
+    }

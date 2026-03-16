@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1370132499964411527}
-  - component: {fileID: 4919498160247942054}
   - component: {fileID: 1051340609048009377}
   m_Layer: 0
   m_Name: Treasure Tile
@@ -36,18 +35,6 @@ Transform:
   - {fileID: 3813523291906375824}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4919498160247942054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982524790391069164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 816f2a943b3b3ce4ea170e6109c975ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1051340609048009377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d7c8d440346ac4190c97dc512b0308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  z: 0
+  shrouded: 1
+  fog: {fileID: 0}
 --- !u!1001 &1186592485508907553
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -139,6 +139,14 @@ PrefabInstance:
       propertyPath: Ztiles
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 428882978060060014, guid: cfa090958f1f3244c9f83bc574f62cbb, type: 3}
+      propertyPath: exitTilePrefab
+      value: 
+      objectReference: {fileID: 1234775610317130265, guid: 1f7a21ae6dc20bc4b9dbfb9ede2ed836, type: 3}
+    - target: {fileID: 428882978060060014, guid: cfa090958f1f3244c9f83bc574f62cbb, type: 3}
+      propertyPath: emptyTilePrefab
+      value: 
+      objectReference: {fileID: 411298296765376853, guid: 205f0542f2114554a9c879f7001f8116, type: 3}
     - target: {fileID: 6789976341853156371, guid: cfa090958f1f3244c9f83bc574f62cbb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -507,7 +515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f083f307fbde4814ab4502e30ae904e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnmanager: {fileID: 0}
 --- !u!114 &404576403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,10 +527,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9ee8ba860be0a449be3dcf6c0a112c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirmen: {fileID: 0}
-  detectors: []
-  state: 1
-  maxstates: 2
+  map: {fileID: 1264231812}
+  player: {fileID: 1297848503}
+  LeftOption: {fileID: 779037038}
+  RightOption: {fileID: 552602378}
+  UpOption: {fileID: 781467066}
+  DownOption: {fileID: 1932337304}
+  Right: 0
+  Left: 0
+  Up: 0
+  Down: 0
+  currentState: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +942,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1264231812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 428882978060060014, guid: cfa090958f1f3244c9f83bc574f62cbb, type: 3}
+  m_PrefabInstance: {fileID: 11115226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f6ba9777f5927c45b4c29945d23eabc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1297848502 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6729619008680165760, guid: e5868d5355957c04486630f004180ab4, type: 3}
@@ -1396,6 +1421,10 @@ PrefabInstance:
       propertyPath: directionmessage
       value: 
       objectReference: {fileID: 1932337304}
+    - target: {fileID: 3635112885443177261, guid: e5868d5355957c04486630f004180ab4, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5548590391436840288, guid: e5868d5355957c04486630f004180ab4, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1448,6 +1477,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8184742069611671216, guid: e5868d5355957c04486630f004180ab4, type: 3}
+      propertyPath: map
+      value: 
+      objectReference: {fileID: 1264231812}
     - target: {fileID: 8184742069611671216, guid: e5868d5355957c04486630f004180ab4, type: 3}
       propertyPath: health
       value: 

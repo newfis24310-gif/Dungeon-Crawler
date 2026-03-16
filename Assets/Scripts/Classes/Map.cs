@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class Map : MonoBehaviour
 {
@@ -61,8 +62,16 @@ public class Map : MonoBehaviour
 
     private GameObject RandomTile()
     {
-        int randomIndex = Random.Range(0, tilePrefabs.Count);
+        int randomIndex = UnityEngine.Random.Range(0, tilePrefabs.Count);
         return tilePrefabs[randomIndex];
+    }
+
+    public BaseTile FindCurrentTile(Vector3 pos)
+    {
+        int indexX = Mathf.FloorToInt(pos.x / tileSize);
+        int indexZ = Mathf.FloorToInt(pos.z / tileSize);
+
+        return grid[indexX, indexZ];
     }
 
     public List<BaseTile> GetNeighbours(BaseTile tile)
@@ -76,20 +85,34 @@ public class Map : MonoBehaviour
         new Vector2Int(1,0) //Right
         };
 
-        foreach(var dir in directions)
+        for(int i=0; i<directions.Length; i++)
         {
+            var dir = directions[i];
             int neighX = tile.x + dir.x;
             int neighZ = tile.z + dir.y;
-            if(IsInsideGrid(neighX,neighZ))
-            {
-                neighbours.Add(grid[neighX,neighZ]);
-            }
+            if(IsInsideGrid(neighX, neighZ, i))
+                neighbours.Add(grid[neighX, neighZ]);
         }
         return neighbours;
     }
 
-    private bool IsInsideGrid(int x, int z)
+    private bool IsInsideGrid(int x, int z, int index)
     {
-        return x>=0 && x<width && z>=0 && z<height;
+        bool inside = x>=0 && x<width && z>=0 && z<height;
+        if(inside)
+        {
+            if(index == 0){TurnManager.Instance.Up = true;}
+            else if(index == 1){TurnManager.Instance.Down = true;}
+            else if(index == 2){TurnManager.Instance.Left = true;}
+            else if(index == 3){TurnManager.Instance.Right = true;}
+        }
+        else if(!inside)
+        {
+            if(index == 0){TurnManager.Instance.Up = false;}
+            else if(index == 1){TurnManager.Instance.Down = false;}
+            else if(index == 2){TurnManager.Instance.Left = false;}
+            else if(index == 3){TurnManager.Instance.Right = false;}
+        }
+        return inside;
     }
 }

@@ -5,13 +5,20 @@ public abstract class BaseTile : MonoBehaviour
     public int x;
     public int z;
     public bool shrouded = true;
+    public GameObject fog;
 
-    void Start()
+    void Awake()
     {
-        Debug.Log(x + "," + z);
+        Transform childTransform = transform.Find("Fog");
+        fog = childTransform.gameObject;
     }
     public virtual void OnPlayerEnter(Player player)
     {
         
+    }
+
+    public void FogOff()
+    {
+        fog.SetActive(false);
     }
 }

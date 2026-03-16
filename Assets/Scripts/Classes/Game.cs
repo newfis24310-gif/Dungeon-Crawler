@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    public TurnManager turnmanager;
-
     public static bool isPaused = false;
 
     void Start()
