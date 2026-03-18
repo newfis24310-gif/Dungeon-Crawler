@@ -7,17 +7,16 @@ public class TurnManager : MonoBehaviour
     public Map map;
     public Player player;
     public GameObject LeftOption, RightOption, UpOption, DownOption;
-
-    public bool Right,Left,Up,Down = false;
     public enum GameState
     {
         DirectionSelection,
-        PLayerMovement,
         TileAction,
         Death,
         Victory
     }
     public GameState currentState;
+
+    [SerializeField] UIManager uiManager;
 
     private void Awake()
     {
@@ -38,20 +37,33 @@ public class TurnManager : MonoBehaviour
         switch(currentState)
         {
             case GameState.DirectionSelection:
-                currentState = GameState.PLayerMovement;
+                currentState = GameState.TileAction;
+                uiManager.DisableDirectionUI();
                 break;
             
-            case GameState.PLayerMovement:
-                currentState = GameState.TileAction;
+            case GameState.TileAction:
+                currentState = GameState.DirectionSelection;
+                uiManager.EnableDirectionUI();
                 break;
         }
     }
 
-    public void TurnOnDirections(List<BaseTile> neighbours)
+    public void UpdateDirectionUI(List<BaseTile> neighbours, BaseTile currentTile)
     {
-        if(Left){LeftOption.SetActive(true);}
-        if(Right){RightOption.SetActive(true);}
-        if(Up){UpOption.SetActive(true);}
-        if(Down){DownOption.SetActive(true);}
+        LeftOption.SetActive(false);
+        RightOption.SetActive(false);
+        UpOption.SetActive(false);
+        DownOption.SetActive(false);
+
+        foreach(var neigh in neighbours)
+        {
+            int dx = neigh.x - currentTile.x;
+            int dz = neigh.z - currentTile.z;
+
+            if(dx == -1) LeftOption.SetActive(true);
+            if(dx == 1) RightOption.SetActive(true);
+            if(dz == 1) UpOption.SetActive(true);
+            if(dz == -1) DownOption.SetActive(true);
+        }
     }
     }

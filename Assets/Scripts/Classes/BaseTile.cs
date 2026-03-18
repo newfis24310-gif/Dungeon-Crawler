@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class BaseTile : MonoBehaviour
+public abstract class BaseTile : MonoBehaviour, IEffect
 {
     public int x;
     public int z;
@@ -12,13 +12,12 @@ public abstract class BaseTile : MonoBehaviour
         Transform childTransform = transform.Find("Fog");
         fog = childTransform.gameObject;
     }
-    public virtual void OnPlayerEnter(Player player)
-    {
-        
-    }
+    public virtual void OnPlayerEnter(Player player){}
 
     public void FogOff()
     {
         fog.SetActive(false);
     }
+
+    public virtual void ExecuteEffect(){}
 }

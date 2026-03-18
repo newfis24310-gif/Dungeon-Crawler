@@ -17,7 +17,7 @@ public class Map : MonoBehaviour
 
     public List<GameObject> tilePrefabs;
 
-    void Start()
+    void Awake()
     {
         gridParent = transform;
         grid = new BaseTile[width,height];
@@ -77,6 +77,7 @@ public class Map : MonoBehaviour
     public List<BaseTile> GetNeighbours(BaseTile tile)
     {
         List<BaseTile> neighbours = new List<BaseTile>();
+
         Vector2Int[] directions =
         {
         new Vector2Int(0,1),  //Up
@@ -90,29 +91,14 @@ public class Map : MonoBehaviour
             var dir = directions[i];
             int neighX = tile.x + dir.x;
             int neighZ = tile.z + dir.y;
-            if(IsInsideGrid(neighX, neighZ, i))
+            if(IsInsideGrid(neighX, neighZ))
                 neighbours.Add(grid[neighX, neighZ]);
         }
         return neighbours;
     }
 
-    private bool IsInsideGrid(int x, int z, int index)
+    private bool IsInsideGrid(int x, int z)
     {
-        bool inside = x>=0 && x<width && z>=0 && z<height;
-        if(inside)
-        {
-            if(index == 0){TurnManager.Instance.Up = true;}
-            else if(index == 1){TurnManager.Instance.Down = true;}
-            else if(index == 2){TurnManager.Instance.Left = true;}
-            else if(index == 3){TurnManager.Instance.Right = true;}
-        }
-        else if(!inside)
-        {
-            if(index == 0){TurnManager.Instance.Up = false;}
-            else if(index == 1){TurnManager.Instance.Down = false;}
-            else if(index == 2){TurnManager.Instance.Left = false;}
-            else if(index == 3){TurnManager.Instance.Right = false;}
-        }
-        return inside;
+        return x>=0 && x<width && z>=0 && z<height;
     }
 }

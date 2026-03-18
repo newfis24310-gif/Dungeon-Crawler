@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3635112885443177261}
   - component: {fileID: 8184742069611671216}
   - component: {fileID: -8433604620427066005}
+  - component: {fileID: 1765157559419555156}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -170,7 +171,6 @@ MonoBehaviour:
   inventory: {fileID: 0}
   combat: {fileID: 0}
   map: {fileID: 0}
-  currentTile: {fileID: 0}
   trapshield: 0
   moveSpeed: 5
 --- !u!114 &-8433604620427066005
@@ -187,3 +187,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 0
+--- !u!114 &1765157559419555156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548590391436840288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af35f252277753644b30665cb935531b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridX: 0
+  gridZ: 0
+  currentTile: {fileID: 0}
+  map: {fileID: 0}

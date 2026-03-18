@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IEffect : MonoBehaviour
+public interface IEffect
 {
-   
+   void ExecuteEffect();
 }
