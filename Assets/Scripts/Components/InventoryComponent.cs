@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryComponent : MonoBehaviour
+public class InventoryComponent : MonoBehaviour, IComponent
 {
     public List<Item> items = new List<Item>();
 
@@ -18,5 +18,10 @@ public class InventoryComponent : MonoBehaviour
     public void UseItem(Item item, Player player)
     {
         item.Use(player);
+    }
+
+    public void Initialize()
+    {
+        items = new List<Item>();
     }
 }

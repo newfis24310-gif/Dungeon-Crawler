@@ -1429,6 +1429,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8433604620427066005, guid: e5868d5355957c04486630f004180ab4, type: 3}
+      propertyPath: maxHP
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1765157559419555156, guid: e5868d5355957c04486630f004180ab4, type: 3}
       propertyPath: map
       value: 

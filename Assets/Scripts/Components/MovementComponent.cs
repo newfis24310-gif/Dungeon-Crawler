@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class MovementComponent : MonoBehaviour
+public class MovementComponent : MonoBehaviour, IComponent
 {
     public int playerX = 0;
     public int playerZ = 0;
@@ -84,5 +84,13 @@ public class MovementComponent : MonoBehaviour
         }
 
         TurnManager.Instance.UpdateDirectionUI(neighbours, currentTile);
+    }
+
+    public void Initialize()
+    {
+        playerX = 0;
+        playerZ = 0;
+        currentTile = map.grid[0,0];
+        RevealNeighbours();
     }
 }

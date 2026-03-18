@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HealthComponent : MonoBehaviour
+public class HealthComponent : MonoBehaviour, IComponent
 {
     public int maxHP = 100;
     public int currentHP;
@@ -16,9 +16,10 @@ public class HealthComponent : MonoBehaviour
         Debug.Log("Damage taken: " + damage);
     }
 
-    public void Heal()
+    public void Heal(int amount)
     {
-        
+        currentHP += amount;
+        Debug.Log("Heal taken: " + amount);
     }
 
     public void Death()
@@ -26,4 +27,9 @@ public class HealthComponent : MonoBehaviour
         
     }
 
+    public void Initialize()
+    {
+        maxHP = 100;
+        currentHP = maxHP;
+    }
 }

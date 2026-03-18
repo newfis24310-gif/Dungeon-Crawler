@@ -1,6 +1,6 @@
 using UnityEngine;
 
-interface IComponent
+public interface IComponent
 {
-    
+    void Initialize();
 }
