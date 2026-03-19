@@ -23,5 +23,5 @@ public class InventoryComponent : MonoBehaviour, IComponent
     public void Initialize()
     {
         items = new List<Item>();
-    }
+    }    
 }

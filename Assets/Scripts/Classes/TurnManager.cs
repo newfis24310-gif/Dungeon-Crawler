@@ -39,6 +39,7 @@ public class TurnManager : MonoBehaviour
             case GameState.DirectionSelection:
                 currentState = GameState.TileAction;
                 uiManager.DisableDirectionUI();
+                player.GetComponent<MovementComponent>().currentTile.ExecuteEffect();
                 break;
             
             case GameState.TileAction:

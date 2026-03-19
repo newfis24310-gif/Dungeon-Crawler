@@ -6,7 +6,6 @@ public abstract class BaseTile : MonoBehaviour, IEffect
     public int z;
     public bool shrouded = true;
     public GameObject fog;
-    public TurnManager turnManager;
 
     void Awake()
     {
@@ -23,6 +22,6 @@ public abstract class BaseTile : MonoBehaviour, IEffect
     public virtual void ExecuteEffect(){}
     public virtual void EndEffect()
     {
-        turnManager.NextState();
+        TurnManager.Instance.NextState();
     }
 }
