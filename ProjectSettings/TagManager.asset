@@ -7,6 +7,8 @@ TagManager:
   - Tile
   - Floor
   - Fog
+  - Map
+  - Inventory
   layers:
   - Default
   - TransparentFX

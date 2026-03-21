@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 428882978060060014}
   m_Layer: 0
   m_Name: Map (auto)
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6ba9777f5927c45b4c29945d23eabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitTilePrefab: {fileID: 0}
+  emptyTilePrefab: {fileID: 0}
+  width: 5
+  height: 3
+  tileSize: 2.3
   tilePrefabs:
   - {fileID: 6560697175817191830, guid: 4064966617602e64ab51124c1cc71128, type: 3}
   - {fileID: 6817576625965132610, guid: 299c1e7946f17f94a9a12e86df5a47bf, type: 3}
   - {fileID: 4982524790391069164, guid: a5d30f4916983b14097e2cc3be54c7c1, type: 3}
   - {fileID: 411298296765376853, guid: 205f0542f2114554a9c879f7001f8116, type: 3}
-  exittilePrefab: {fileID: 1234775610317130265, guid: 1f7a21ae6dc20bc4b9dbfb9ede2ed836, type: 3}
-  emptytilePrefab: {fileID: 411298296765376853, guid: 205f0542f2114554a9c879f7001f8116, type: 3}
-  width: 5
-  height: 3
-  tilePrefab: {fileID: 0}

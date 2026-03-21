@@ -29,7 +29,6 @@ public class HealthComponent : MonoBehaviour, IComponent
 
     public void Initialize()
     {
-        maxHP = 100;
         currentHP = maxHP;
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ProtectionShield : Item, ICollectible, IUsable
+public class ProtectionShield : Item, IUsable
 {
     public void Collect(Player player)
     {

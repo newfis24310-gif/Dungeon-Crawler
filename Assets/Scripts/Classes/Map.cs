@@ -101,4 +101,13 @@ public class Map : MonoBehaviour
     {
         return x>=0 && x<width && z>=0 && z<height;
     }
+
+    public void RevealMap()
+    {
+        foreach(var neigh in grid)
+        {
+            neigh.shrouded = false;
+            neigh.FogOff();
+        }
+    }
 }
