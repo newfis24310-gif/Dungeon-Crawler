@@ -1613,6 +1613,10 @@ PrefabInstance:
       propertyPath: maxHP
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 821580835685692778, guid: e5868d5355957c04486630f004180ab4, type: 3}
+      propertyPath: yoffset
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1765157559419555156, guid: e5868d5355957c04486630f004180ab4, type: 3}
       propertyPath: map
       value: 
