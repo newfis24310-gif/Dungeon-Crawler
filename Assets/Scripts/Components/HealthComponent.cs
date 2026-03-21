@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour, IComponent
 {
-    public int maxHP = 100;
+    public int maxHP = 20;
     public int currentHP;
 
     void Start()
@@ -19,6 +19,10 @@ public class HealthComponent : MonoBehaviour, IComponent
     public void Heal(int amount)
     {
         currentHP += amount;
+        if(currentHP > maxHP)
+        {
+            currentHP = maxHP;
+        }
         Debug.Log("Heal taken: " + amount);
     }
 

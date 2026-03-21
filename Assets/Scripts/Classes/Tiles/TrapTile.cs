@@ -4,7 +4,7 @@ public class TrapTile : ActionTile
 {
     public int damage = 10;
 
-    public override void OnPlayerEnter(Player player)
+    public virtual void ExecuteEffect(Player player)
     {
         player.TakeDamage(damage);
     }

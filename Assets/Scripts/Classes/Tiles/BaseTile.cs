@@ -5,6 +5,7 @@ public abstract class BaseTile : MonoBehaviour, IEffect
     public int x;
     public int z;
     public bool shrouded = true;
+    public bool traversed = false;
     public GameObject fog;
 
     void Awake()
@@ -12,15 +13,15 @@ public abstract class BaseTile : MonoBehaviour, IEffect
         Transform childTransform = transform.Find("Fog");
         fog = childTransform.gameObject;
     }
-    public virtual void OnPlayerEnter(Player player){}
 
     public void FogOff()
     {
         fog.SetActive(false);
     }
 
-    public virtual void ExecuteEffect(){}
-    public virtual void EndEffect()
+    public virtual void ExecuteEffect(Player player){}
+
+    public void EndEffect()
     {
         TurnManager.Instance.NextState();
     }

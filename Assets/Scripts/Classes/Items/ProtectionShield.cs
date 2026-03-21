@@ -1,13 +1,9 @@
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Items/Shield")]
 public class ProtectionShield : Item, IUsable
 {
-    public void Collect(Player player)
-    {
-        player.inventory.AddItem(this);
-    }
-
-    public void Use(Player player)
+    public override void Use(Player player)
     {
         ExecuteEffect(player);
     }
@@ -15,6 +11,6 @@ public class ProtectionShield : Item, IUsable
     override public void ExecuteEffect(Player player)
     {
         player.trapshield=true;
-        Debug.Log("You got shield!");
+        Debug.Log("You got a shield! Next trap, you will be protected.");
     }
 }

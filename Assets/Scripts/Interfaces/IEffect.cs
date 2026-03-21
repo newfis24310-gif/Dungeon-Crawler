@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IEffect
 {
-   void ExecuteEffect();
+   void ExecuteEffect(Player player);
 }
