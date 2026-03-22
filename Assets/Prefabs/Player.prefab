@@ -170,8 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027f591ab12653c47a5490e6d223fd34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 30
   currentHP: 0
+  status: 0
 --- !u!114 &1765157559419555156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,8 +201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dd71eedaa577ad43abda2b8b69beba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 2
+  attack: 8
   defence: 1
   maxRandomDamage: 2
-  enemyPrefab: {fileID: 9020773110454845652, guid: 74b076e4d313e1649988bb16564ead60, type: 3}
-  yoffset: 1

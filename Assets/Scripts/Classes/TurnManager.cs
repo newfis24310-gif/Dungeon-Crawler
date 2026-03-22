@@ -67,4 +67,10 @@ public class TurnManager : MonoBehaviour
             if(dz == -1) DownOption.SetActive(true);
         }
     }
+
+    public void LoseGame()
+    {
+        currentState = GameState.Death;
+        Debug.Log("You lost the game :(");
     }
+}

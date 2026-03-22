@@ -50,6 +50,10 @@ MonoBehaviour:
   x: 0
   z: 0
   shrouded: 1
+  traversed: 0
+  fog: {fileID: 0}
+  enemyPrefab: {fileID: 9020773110454845652, guid: 74b076e4d313e1649988bb16564ead60, type: 3}
+  yoffset: 1.5
 --- !u!1001 &121459511877059563
 PrefabInstance:
   m_ObjectHideFlags: 0
