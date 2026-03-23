@@ -20,6 +20,10 @@ public class CombatTile : ActionTile
             traversed = true;
             PrepareCombat();
         }
+        else
+        {
+            EndEffect();
+        }
     }
 
     public void PrepareCombat()

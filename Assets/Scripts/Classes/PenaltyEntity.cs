@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class PenaltyEntity : Enemy
 {
-    public int attackPower = 5;
+    public int trapDamage = 5;
 }

@@ -117,7 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7194404609872156424}
-  - component: {fileID: 6720052903454701828}
+  - component: {fileID: 5786477150283612141}
   - component: {fileID: 3429842449157630799}
   - component: {fileID: 6819828489477506111}
   m_Layer: 0
@@ -143,7 +143,7 @@ Transform:
   - {fileID: 4861864745826728906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6720052903454701828
+--- !u!114 &5786477150283612141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9020773110454845652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72a81b465ea5dc04396f0c929117ee1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 50f83d628989ec0458b0416947f5c33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 0}
@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027f591ab12653c47a5490e6d223fd34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
   maxHP: 20
   currentHP: 0
   status: 0

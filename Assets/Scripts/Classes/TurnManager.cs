@@ -71,6 +71,14 @@ public class TurnManager : MonoBehaviour
     public void LoseGame()
     {
         currentState = GameState.Death;
+        uiManager.EnableLoseMessage();
         Debug.Log("You lost the game :(");
+    }
+
+    public void WinGame()
+    {
+        currentState = GameState.Victory;
+        uiManager.EnableWinMessage();
+        Debug.Log("You won! How?!");
     }
 }

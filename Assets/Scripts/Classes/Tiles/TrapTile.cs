@@ -4,8 +4,20 @@ public class TrapTile : ActionTile
 {
     public int damage = 10;
 
-    public virtual void ExecuteEffect(Player player)
+    public override void ExecuteEffect(Player player)
     {
-        player.TakeDamage(damage);
+        if(traversed == false)
+        {
+            var playerHealth = player.GetComponent<HealthComponent>();
+
+            playerHealth.TakeDamage(damage);
+            Debug.Log($"It's a trap! How unfortunate... You took {damage} damage.");
+            traversed = true;
+            if(playerHealth.status == HealthComponent.Status.Dead)
+            {
+                TurnManager.Instance.LoseGame();
+            }
+        }
+        EndEffect();
     }
 }

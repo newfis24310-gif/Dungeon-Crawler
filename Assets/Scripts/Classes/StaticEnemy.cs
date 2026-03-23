@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class StaticEnemy : Enemy
 {
-    public int trapDamage = 5;
+    public int attackPower = 5;
 }
