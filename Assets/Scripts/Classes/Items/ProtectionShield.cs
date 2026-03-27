@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Items/Shield")]
-public class ProtectionShield : Item, IUsable
+public class ProtectionShield : Item
 {
     public override void Use(Player player)
     {

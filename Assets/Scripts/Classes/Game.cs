@@ -5,11 +5,6 @@ public class Game : MonoBehaviour
 {
     public static bool isPaused = false;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -41,5 +36,10 @@ public class Game : MonoBehaviour
         {
             Debug.Log("Unpaused");
         }
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
