@@ -1,0 +1,7 @@
+organization=newfis24310-gif
+projectKey=newfis24310-gif_Dungeon-Crawler
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.84103
+dashboardUrl=https://sonarcloud.io/dashboard?id=newfis24310-gif_Dungeon-Crawler
+ceTaskId=AZ0wagfoesq4Fh5Q3rnB
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZ0wagfoesq4Fh5Q3rnB
